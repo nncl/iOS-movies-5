@@ -17,6 +17,7 @@
 		AC264C1D1E7CABAE00F083F1 /* UIViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC264C1C1E7CABAD00F083F1 /* UIViewController+CoreData.swift */; };
 		AC264C1F1E7CBEB300F083F1 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC264C1E1E7CBEB300F083F1 /* CategoriesViewController.swift */; };
 		AC4E89221E835D9B000DA096 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4E89211E835D9B000DA096 /* SettingsViewController.swift */; };
+		AC4E89241E8361A2000DA096 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AC4E89231E8361A2000DA096 /* Settings.bundle */; };
 		AC64CE811E70BCAA00FD5EFF /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64CE801E70BCAA00FD5EFF /* MoviesTableViewController.swift */; };
 		AC64CE831E70C8C600FD5EFF /* movies.json in Resources */ = {isa = PBXBuildFile; fileRef = AC64CE821E70C8C600FD5EFF /* movies.json */; };
 		AC64CED51E70C98E00FD5EFF /* arrival-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AC64CEBB1E70C98E00FD5EFF /* arrival-small.jpg */; };
@@ -68,6 +69,7 @@
 		AC264C1C1E7CABAD00F083F1 /* UIViewController+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreData.swift"; sourceTree = "<group>"; };
 		AC264C1E1E7CBEB300F083F1 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		AC4E89211E835D9B000DA096 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AC4E89231E8361A2000DA096 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		AC64CE801E70BCAA00FD5EFF /* MoviesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
 		AC64CE821E70C8C600FD5EFF /* movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movies.json; sourceTree = "<group>"; };
 		AC64CEBB1E70C98E00FD5EFF /* arrival-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "arrival-small.jpg"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				AC70C4F31E742306005E598A /* Theater */,
 				07780D501E6D860E00BC3630 /* Main.storyboard */,
 				AC4E89211E835D9B000DA096 /* SettingsViewController.swift */,
+				AC4E89231E8361A2000DA096 /* Settings.bundle */,
 				AC264C1E1E7CBEB300F083F1 /* CategoriesViewController.swift */,
 				07780D531E6D860E00BC3630 /* Assets.xcassets */,
 				07780D551E6D860E00BC3630 /* LaunchScreen.storyboard */,
@@ -309,6 +312,7 @@
 				AC64CED61E70C98E00FD5EFF /* arrival-wide.jpg in Resources */,
 				AC64CEE61E70C98E00FD5EFF /* logan-wide.jpg in Resources */,
 				AC64CEEA1E70C98E00FD5EFF /* rogueone-wide.jpg in Resources */,
+				AC4E89241E8361A2000DA096 /* Settings.bundle in Resources */,
 				AC64CED51E70C98E00FD5EFF /* arrival-small.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
