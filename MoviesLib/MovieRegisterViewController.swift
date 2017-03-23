@@ -24,20 +24,22 @@ class MovieRegisterViewController: UIViewController {
     // Somente quando carrega a primeira vez
     override func viewDidLoad() {
         super.viewDidLoad()
+        tfTitle.text = movie.title
+        tfRating.text = "\(movie.rating)"
+        tfDuration.text = movie.duration
+        tvSummary.text = movie.summary
+        
+        if let image = movie.poster as? UIImage {
+            ivPoster.image = image
+        }
+
+        btAddUpdate.setTitle("Atualizar", for: .normal)
     }
     
     // Sempre quando a view aparece
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if movie != nil {
-            tfTitle.text = movie.title
-            tfRating.text = "\(movie.rating)"
-            tfDuration.text = movie.duration
-            tvSummary.text = movie.summary
-            
-            if let image = movie.poster as? UIImage {
-                ivPoster.image = image
-            }
             
             // Array com as categorias
             if let categories = movie.categories {
@@ -50,8 +52,6 @@ class MovieRegisterViewController: UIViewController {
                 })
                 */
             }
-            
-            btAddUpdate.setTitle("Atualizar", for: .normal)
         }
     }
     

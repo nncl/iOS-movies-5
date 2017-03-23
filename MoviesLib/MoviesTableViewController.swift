@@ -86,6 +86,9 @@ class MoviesTableViewController: UITableViewController {
         cell.lbRating.text = "\(movie.rating)"
         cell.lbTitle.text = movie.title
         cell.lbSummary.text = movie.summary
+        if let image = movie.poster as? UIImage {
+            cell.ivPoster.image = image
+        }
         
         return cell
     }

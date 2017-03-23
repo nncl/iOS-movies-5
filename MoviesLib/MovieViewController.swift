@@ -40,6 +40,9 @@ class MovieViewController: UIViewController {
         if let categories = movie.categories {
             lbGenre.text = categories.map({($0 as! Category).name!}).joined(separator: ", ")
         }
+        if let image = movie.poster as? UIImage {
+            ivPoster.image = image
+        }
         
     }
 
