@@ -26,6 +26,10 @@ class MovieViewController: UIViewController {
     // MARK: Super Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         //ivPoster.image = UIImage(named: movie.imageWide)
         lbTitle.text = movie.title
@@ -33,6 +37,9 @@ class MovieViewController: UIViewController {
         lbDuration.text = movie.duration
         lbScore.text = "⭐️ \(movie.rating)/10"
         tvSinopsis.text = movie.summary
+        if let categories = movie.categories {
+            lbGenre.text = categories.map({($0 as! Category).name!}).joined(separator: ", ")
+        }
         
     }
 
