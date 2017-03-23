@@ -19,6 +19,7 @@ class MovieRegisterViewController: UIViewController {
     @IBOutlet weak var btAddUpdate: UIButton!
     
     var movie: Movie!
+    var smallImage: UIImage!
     
     // Somente quando carrega a primeira vez
     override func viewDidLoad() {
@@ -33,6 +34,10 @@ class MovieRegisterViewController: UIViewController {
             tfRating.text = "\(movie.rating)"
             tfDuration.text = movie.duration
             tvSummary.text = movie.summary
+            
+            if let image = movie.poster as? UIImage {
+                ivPoster.image = image
+            }
             
             // Array com as categorias
             if let categories = movie.categories {
@@ -72,10 +77,15 @@ class MovieRegisterViewController: UIViewController {
         if movie == nil {
             movie = Movie(context: context)
         }
+        
         movie.title = tfTitle.text!
         movie.rating = Double(tfRating.text!)!
         movie.summary = tvSummary.text
         movie.duration = tfDuration.text
+        
+        if smallImage != nil {
+            movie.poster = smallImage
+        }
         
         do {
             try context.save()
@@ -86,17 +96,27 @@ class MovieRegisterViewController: UIViewController {
         close(nil)
     }
     
+    func selectPicture(sourceType: UIImagePickerControllerSourceType) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = sourceType
+        imagePicker.delegate = self // Vamos implementar quando o user selecionar a foto
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     @IBAction func addPoster(_ sender: UIButton) {
         let alert = UIAlertController(title: "Selecionar pôster", message: "De onde vc quer escolher seu pôster?", preferredStyle: .actionSheet)
         
-        let cameraAction = UIAlertAction(title: "Câmera", style: .default) { (action: UIAlertAction) in
-            // TODO
+        // Se houver câmera, ex.: emulador
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Câmera", style: .default) { (action: UIAlertAction) in
+                self.selectPicture(sourceType: .camera)
+            }
+            
+            alert.addAction(cameraAction)
         }
         
-        alert.addAction(cameraAction)
-        
         let libraryAction = UIAlertAction(title: "Biblioteca", style: .default) { (action: UIAlertAction) in
-            // TODO
+            self.selectPicture(sourceType: .photoLibrary)
         }
         
         alert.addAction(libraryAction)
@@ -110,3 +130,30 @@ class MovieRegisterViewController: UIViewController {
     }
     
 }
+
+extension MovieRegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    /*func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        // TODO Use below instead because we already have the image there instead of getting it from here from a dictionaire
+    }*/
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingImage image: UIImage,
+                               editingInfo: [String: AnyObject]?) {
+        
+        
+        // Diminuir a resolução da imagem, vai que é uma image de 400K
+        // 1. Solicitar área de desenho na memória
+        // Como reduzir uma imagem
+        let smallSize = CGSize(width: 300, height: 280)
+        UIGraphicsBeginImageContext(smallSize)
+        
+        image.draw(in: CGRect(x: 0, y: 0, width: smallSize.width, height: smallSize.height))
+        smallImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext() // Finaliza a área da memória
+        
+        ivPoster.image = smallImage
+        
+        dismiss(animated: true, completion: nil)
+    }
+}
+
