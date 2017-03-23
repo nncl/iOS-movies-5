@@ -376,11 +376,69 @@
                     <connections>
                         <segue destination="Dpq-FH-B7x" kind="relationship" relationship="viewControllers" id="mOA-OD-liO"/>
                         <segue destination="aQs-Ri-ZqL" kind="relationship" relationship="viewControllers" id="Iwg-vT-Wo3"/>
+                        <segue destination="Tz3-nC-INV" kind="relationship" relationship="viewControllers" id="QEo-6A-GNg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPq-iQ-r7M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-399.375" y="-120.4225352112676"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="C2X-ua-vJO">
+            <objects>
+                <viewController id="Tz3-nC-INV" customClass="SettingsViewController" customModule="MoviesLib" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SJG-Cq-u3L"/>
+                        <viewControllerLayoutGuide type="bottom" id="qqP-pX-2EY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="omi-qV-AoJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MYk-4x-bCc">
+                                <rect key="frame" x="132" y="74" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeColor:" destination="Tz3-nC-INV" eventType="valueChanged" id="G1I-Mf-7Mn"/>
+                                    <action selector="swColor:" destination="Tz3-nC-INV" eventType="valueChanged" id="CyG-kF-Lbn"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Branco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcK-9a-MX8">
+                                <rect key="frame" x="59" y="79" width="57" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bxz-Wj-8Zp">
+                                <rect key="frame" x="45" y="113" width="231" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Tz3-nC-INV" id="gQq-37-KdS"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amarelo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJS-fg-jWD">
+                                <rect key="frame" x="203" y="79" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="HZZ-lg-6eJ"/>
+                    <connections>
+                        <outlet property="swColor" destination="MYk-4x-bCc" id="vDi-f0-guA"/>
+                        <outlet property="tfName" destination="Bxz-Wj-8Zp" id="DyC-nM-v9c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hk4-Ns-XC0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-399.375" y="723.59154929577471"/>
         </scene>
         <!--Cadastro de Filmes-->
         <scene sceneID="hS9-FK-byR">
